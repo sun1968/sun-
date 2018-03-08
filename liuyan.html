@@ -1,0 +1,479 @@
+<!DOCTYPE >
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>留言板</title>
+<style type="text/css">
+	@charset "utf-8";
+body,ul,ol,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;}
+body{font-size:12px;font-family:"SimSun","Arial Narrow";}
+ul,ol{list-style-type:none;}
+select,input,img,select{vertical-align:middle;}
+a{text-decoration:underline; color:#313030;}
+a {blr:expression(this.onFocus=this.blur())} /*if IE*/
+a {outline:none;}/*if 火狐等现代浏览器浏览器*/  
+/*故两个都加载style里面，保证所有兼容*/
+/*头部*/
+.czArea{width:755px; display:block; overflow:hidden; margin:0 auto;}
+.commentOn{
+	width:753px;
+	display:block;
+	overflow:hidden;
+	border:#A5BCFF solid 1px;
+	background:#F3F8FD;
+	padding:15px 0px;
+	margin-top:25px;
+	font-family:Verdana;
+}
+.commentOn .plTitle{
+	height:45px;
+	width:713px;
+	padding:0 20px;
+}
+.plTitle img{
+	float:left;
+}
+.plTitle span{
+	float:right;
+	line-height:22px;
+}
+.plTitle span a{
+	color:#2b2b2b;
+	text-decoration:none;
+}
+.plTitle span a em{
+	font-style:normal;
+	color:#F00;
+}
+.reply{
+	display:block;
+	width:716px;
+	overflow:hidden;
+	padding:10px 20px;
+	background:#FFF;
+	border-top:#E9E9E9 solid 1px;
+	border-bottom:#E9E9E9 solid 1px;
+}
+.reply .userInfo{
+	display:block;
+	overflow:hidden;
+	height:25px;
+	border-bottom:#BABABA solid 1px;
+}
+.reply .userName{
+	float:left;
+	background:url(img/userBj.png) left center no-repeat;
+	padding-left:15px;
+	color:#000;
+	font-size:14px;
+	font-weight:bold;
+}
+.reply .replyTime{
+	float:right;
+	color:#8B8585;
+	line-height:24px;
+	font-size:11px;
+}
+.reply .replyContent{
+	line-height:24px;
+	font-size:14px;
+	color:#2b2b2b;
+	padding:15px 0;
+	word-wrap:break-word;
+	word-break:break-all;
+}
+.reply .operation{
+	padding:0;
+	text-align:right;
+	margin-top:-18px;
+	margin-left:684px;
+	_margin-left:0;
+	display:none;
+	clear:both;
+	position:absolute;
+}
+.reply .operation a{
+	color:#2b2b2b;
+	text-decoration:none;
+	font-size:12px;
+	margin:0 5px;
+	float:right;
+}
+
+/*回复 引用 div*/
+.thread{
+	widows:716px;
+	overflow:hidden;
+	margin:0 auto;
+	display:none;
+}
+/*回复 引用  当前项*/
+.thread .threadThis{
+	background:url(img/relpyBjThis.png) bottom center no-repeat;
+	width:30px;
+	height:20px;
+	position:relative;
+	top:1px;
+	text-decoration:none;
+	display:none;
+}
+.threadTop{
+	background:url(img/relpyBjTop.png) left top no-repeat;
+	height:5px;
+	width:715px;
+	font-size:0;
+}
+.threadCenter{
+	display:block;
+	height:190px;
+	overflow:hidden;
+	width:673px;
+	background:#E2F0FF;
+	border-left:#18399A solid 1px;
+	border-right:#18399A solid 1px;
+	padding:0 20px;
+}
+.threadUserInfo{
+	width:673px;
+	display:block;
+	height:36px;
+	line-height:36px;
+	overflow:hidden;
+}
+.threadUserInfo span{
+	float:left;
+	color:#2b2b2b;
+}
+.threadUserInfo input{
+	border:#D2E3FF solid 1px;
+	height:22px;
+	line-height:22px;
+	vertical-align:middle;
+	padding:0 5px;
+	width:130px;
+	float:left;
+	margin:7px 10px 0 0;
+	color:#999;
+}
+.threadUserInfo .threadUserName{
+	font-weight:bold;
+	display:none;
+}
+.textField{
+	width:661px;
+	height:108px;
+	border:#b1b1b1 solid 1px;
+	clear:both;
+	display:block;
+	margin:0 0 10px 0;
+	line-height:20px;
+	padding:0 5px;
+}
+.submitComment{
+	width:673px;
+	overflow:hidden;
+}
+.submitComment input{
+	float:right;
+	width:98px;
+	height:27px;
+	border:none 0;
+	background:tranparent;
+	background:url(img/submitCommentSm.png) left top no-repeat;
+}
+.threadBottom{
+	background:url(img/relpyBjBottom.png) left top no-repeat;
+	height:5px;
+	width:715px;
+	font-size:0;
+}
+.lookMore{
+	height:60px;
+	line-height:60px;
+	text-align:center;
+	display:block;
+	background:#FFF;
+	border-bottom:#E9E9E9 solid 1px;
+	border-top:#E9E9E9 solid 1px;
+}
+.noContent{
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	display:block;
+	background:#FFF;
+	font-size:14px;
+	border-bottom:#E9E9E9 solid 1px;
+	border-top:#E9E9E9 solid 1px;
+	color:#999;
+}
+/*查看全部回复*/
+.lookMore a{
+	text-decoration:none;
+	color:#2b2b2b;
+	font-size:14px;
+	font-family:"宋体";
+}
+.lookMore a em{
+	font-style:normal;
+	color:#F00;
+	font-size:16px;
+}
+/*我要评论*/
+.takeComment{
+	width:713px;
+	display:block;
+	overflow:hidden;
+	border:#A5BCFF solid 1px;
+	background:#F3F8FD;
+	margin-top:25px;
+	font-family:Verdana;
+	padding:15px 20px;
+}
+.takeComment .plTitle{
+	height:45px;
+	width:713px;
+}
+.userLogin_Reg{
+	display:block;
+	overflow:hidden;
+	width:713px;
+}
+.userLogin_Reg p{
+	display:block;
+	overflow:hidden;
+	line-height:20px;
+	margin-bottom:5px;
+}
+.userLogin_Reg span{
+	float:left;
+}
+.userLogin_Reg span a{
+	text-decoration:none;
+	color:#2b2b2b;
+}
+.userLogin_Reg input{
+	border:#D2E3FF solid 1px;
+	height:20px;
+	line-height:20px;
+	vertical-align:middle;
+	padding:0 5px;
+	width:130px;
+	float:left;
+	margin:0 10px 0 0;
+	color:#333;
+}
+.takeUserName{
+	display:none;
+	width:713px;
+	overflow:hidden;
+	margin:10px 0;
+	font-size:14px;
+	color:#2b2b2b;
+	font-weight:bold;
+}
+/*文本输入域*/
+.takeTextField{
+	width:701px;
+	height:108px;
+	border:#b1b1b1 solid 1px;
+	clear:both;
+	display:block;
+	margin:10px 0 10px 0;
+	line-height:20px;
+	padding:0 5px;
+}
+.takeSbmComment{
+	width:713px;
+	display:block;
+	overflow:hidden;
+}
+.takeSbmComment span{
+	float:right;
+	color:#CCC; line-height:37px;
+}
+.takeSbmComment input{
+	float:right;
+	width:125px;
+	height:37px;
+	border:none 0;
+	background:tranparent;
+	background:url(img/takeSbmComment.png) left top no-repeat;
+	cursor:pointer;
+}
+</style>
+<script>
+function getByClass(oParent,sClass)
+{
+	var aEle = oParent.getElementsByTagName('*');
+	var aResult = [];
+	var i = 0;
+	
+	for(i=0; i<aEle.length; i++)
+	{
+		if(aEle[i].className == sClass)
+		{
+			aResult.push(aEle[i]);
+		}
+	}
+	return  aResult;
+}
+function getDouble(obj)
+{
+	if(obj<10)
+	{
+		return '0' + obj;
+	}
+	else
+	{
+		return '' + obj;
+	}
+}
+
+window.onload = function()
+{
+	var oSubmit = document.getElementById('tijiao');
+	var oUserName = document.getElementById('userName');
+	var oTxt = document.getElementById('text');
+	var oConTxt = document.getElementById('cmton');
+	var oLength = document.getElementById('tiaoshu');
+	
+	oLength.innerHTML = getByClass(oConTxt,'reply').length;
+	
+	
+	oSubmit.onclick = function()
+	{
+//		function getTimeArray()
+//{
+//	var oDate=new Date();
+//	var aNumber=[];
+//	
+//	var iYear=oDate.getYear();
+//	var iMonth=oDate.getMonth();
+//	var iDay=oDate.getDate();
+//	var iHour=oDate.getHours();
+//	var iMin=oDate.getMinutes();
+//	var iSec=oDate.getSeconds();
+//	var iWeek=(oDate.getDay()+6)%7;
+//	
+//	if(iYear<1900)
+//	{
+//		iYear+=1900;
+//	}
+//	
+//	var oTime=''+(iYear)+toDouble(iMonth+1)+toDouble(iDay+5)+toDouble(iHour)+toDouble(iMin)+toDouble(iSec)+iWeek;
+		var time = new Date();
+		var oTime = getDouble(time.getFullYear()) + '-' + (getDouble(time.getMonth() + 1)) + '-' + getDouble(time.getDay() + 5) + '  ' + getDouble(time.getHours()) + ':' + getDouble(time.getMinutes()) + ':' + getDouble(time.getSeconds());
+		
+		var oDiv = document.createElement('div');
+		var oC_div = document.createElement('div');
+		var oC_userName = document.createElement('span');
+		var oC_timer = document.createElement('span');
+		var oC_content = document.createElement('p');
+		var oC_del = document.createElement('p');
+		var oC_del_a = document.createElement('a');
+		
+		oDiv.className = 'reply';
+		oC_div.className = 'userInfo';
+		oC_userName.className = 'userName';
+		oC_timer.className = 'replyTime';
+		oC_content.className = 'replyContent';
+		oC_del.className = 'operation';
+		oC_del_a.className = 'rLast';
+		
+		if(oUserName.value == '')
+		{
+			oC_userName.innerHTML = '张锡同<span style="font-size:12px; color:#ccc; font-weight:normal;">(默认用户名)</span>';
+			oC_content.innerHTML = oTxt.value;
+		}
+		else
+		{
+			oC_userName.innerHTML = oUserName.value;
+			oC_content.innerHTML = oTxt.value;
+		}
+		
+		oUserName.value = '';
+		oTxt.value = '';
+		
+		oC_timer.innerHTML = oTime;
+		oC_del_a.innerHTML = '删除';
+		oC_del_a.href = 'javascript:;';
+		
+		oConTxt.appendChild(oDiv);
+		oDiv.appendChild(oC_div);
+		oC_div.appendChild(oC_userName);
+		oC_div.appendChild(oC_timer);
+		oDiv.appendChild(oC_content);
+		oDiv.appendChild(oC_del);
+		oC_del.appendChild(oC_del_a);
+		
+		oLength.innerHTML = getByClass(oConTxt,'reply').length;
+		over_out();
+	}
+	
+	
+	
+	over_out();
+	
+	
+	//鼠标移入移出
+	function over_out()
+	{
+		for(var i=0;i<getByClass(oConTxt,'reply').length;i++)
+		{
+			getByClass(oConTxt,'reply')[i].zns = i;
+			getByClass(oConTxt,'reply')[i].onmouseover = function()
+			{
+				this.style.background = '#ccc';
+				getByClass(oConTxt,'operation')[this.zns].style.display = 'block';
+			}
+			getByClass(oConTxt,'reply')[i].onmouseout = function()
+			{
+				this.style.background = '';
+				getByClass(oConTxt,'operation')[this.zns].style.display = 'none';
+			}
+		}
+	}
+	
+	function del()
+	{
+		
+	}
+}
+
+</script>
+
+</head>
+
+<body>
+<div class="czArea">
+  <div class="commentOn" id="cmton">
+    <div class="plTitle"><img src="img/pinglun.png" /><span><a href="#">已有<em id="tiaoshu"></em>人评论</a></span></div>
+    <span class="noContent" id="noContent">暂无留言</span>
+    
+    <div class="reply">
+      <div class="userInfo">
+      		<span class="userName">．孙茹</span>
+      		<span class="replyTime">2017-11-08 16:37:51</span>
+      </div>
+      <p class="replyContent">张锡同 我爱你</p>
+      <p class="operation"><a href="javascript:;" class="rLast">删除</a></p>
+    </div>
+    
+  </div>
+
+  <div class="takeComment">
+    <div class="plTitle"><img src="img/woyaopinglun.png" /></div>
+    <div class="userLogin_Reg">
+      <p><span>用户名：</span>
+        <input type="text" value="" id="userName" />
+    </div>
+    <div class="takeUserName"><span>．孙茹</span></div>
+    <textarea name="textarea" class="takeTextField" id="text"></textarea>
+    <div class="takeSbmComment">
+    	<input type="button" value="" id="tijiao" />
+    </div>
+  </div>
+</div>
+</body>
+</html>
