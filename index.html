@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">  
     <meta name="viewport" content="width=device-width, initial-scale=1">  
 		<title>医学网站</title>
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
 		<link rel="stylesheet" type="text/css" href="css/new_file.css"/>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-	<!--<script src="js/new_file.js" type="text/javascript" charset="utf-8"></script>-->
-	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 		
 		<script type="text/javascript">
@@ -48,22 +49,35 @@ $(function(){
 </script>
 	</head>
 	<body>
-		<!--<div id="huanfu">
-			 <a id='close'>×</a>
-		</div>-->
 	<div id="warp">
-	<div class="navul">
-				<ul class="nav nav-pills" id="uuullll">  
-			      <li><a href="#">Home</a></li>
-			      <li><a href="#">Services</a></li>	
-			      <li><a href="#">Timetable </a></li>
-			      <li><a href="#">News </a></li>	
-			      <li><a href="#">Features</a></li>
-			       <li><a href="photo.html">Photo Tour</a></li>	
-			        <li><a href="#">Contact</a></li>	
-			   </ul>
-			</div> 
-	<div class="center">
+	<nav class="navbar navbar-default" role="navigation" id="navbar">
+	<div class="container-fluid"> 
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#example-navbar-collapse">
+			<span class="sr-only">导航</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="#">导航条</a>
+	</div>
+	<div class="collapse navbar-collapse" id="example-navbar-collapse">
+		<ul class="nav navbar-nav">
+			<li id="act"><a href="#">Home</a></li>
+			<li><a href="#">Services</a></li>
+			<li><a href="#">Timetable </a></li>
+			<li><a href="#">News </a></li>
+			<li><a href="#">Services</a></li>
+			<li><a href="#">Features</a></li>
+		    <li><a href="photo.html">Photo Tour</a></li>	
+			<li><a href="#">Contact</a></li>	
+		</ul>
+	</div>
+	</div>
+</nav>
+	
+			<div class="center">
 			<div class="sym">
 				<div id="tet">
 				<p id="sss"> SYMPTOM</p>
@@ -82,9 +96,9 @@ $(function(){
 					<a class="common btnRight"href="javascript:;"></a>
 			  </div> 	
 			   <ul>
-				  <li style="background:url(images/5a6eca187e729_02.jpg) no-repeat center center;opacity: 100;filter: alpha(opacity=1);"></li>
-				  <li style="background:url(images/5a6eca187e729_04.jpg) no-repeat center center;"></li>
-				  <li style="background:url(images/5a6eca1f250f0_02.jpg) no-repeat center center;"></li>
+				  <li style="background:url(images/5a6eca187e729_02.jpg) no-repeat ;background-size:100% 100%;opacity: 100;filter: alpha(opacity=1);"></li>
+				  <li style="background:url(images/5a6eca187e729_04.jpg) no-repeat ;background-size:100% 100%;"></li>
+				  <li style="background:url(images/5a6eca1f250f0_02.jpg) no-repeat ;background-size:100% 100%;"></li>
 			   </ul>
 		   </div>    	  
 	 </div>    
@@ -94,7 +108,6 @@ $(function(){
 			<img src="images/5a6eca1f250f0_04.jpg"/>
 			<img src="images/5a6eca1f250f0_05 (2).jpg"/>
 			<img src="images/5a6eca1f250f0_06.jpg"/></div>
-			
 		</div>  
 	<div class="row">
 			<div class="col-md-8 col-md-offset-2" >	
@@ -255,10 +268,9 @@ Cras pharetra dolor vitae malesuada facilisis. </p>
 </div>
 </div>
 		</div>
-	</div>
-
+</div>
     <div class="row" id="hhhh">
-			<div class="col-md-3 col-md-offset-2">	
+			<div class="col-md-3 col-md-offset-2 col-sm-12">	
 				<h2>Departments</h2>
 				<div class="ny_zb">
 <div class="ny_zblb1">
@@ -315,7 +327,7 @@ Cras pharetra dolor vitae malesuada facilisis. </p>
 	
 </div>
 </div>
-			<div class="col-md-3">
+			<div class="col-md-3 col-sm-12">
 			<h2>Our Medical Services</h2>
 			<ul  class="nav nav-pills nav-stacked" id="nav">
 	<li class="active"><a href="#"><span class="glyphicon glyphicon-bookmark"></span>
@@ -330,7 +342,7 @@ Cras pharetra dolor vitae malesuada facilisis. </p>
 <li><a href="#"><span class="glyphicon glyphicon-bookmark"></span><span>Consultative & Diagnostic Medicine</span><span class="glyphicon glyphicon-chevron-right"></span></a></li>
 </ul>
 			</div>
-			<div class="col-md-3" id="uesd">
+			<div class="col-md-3 col-sm-12" id="uesd">
 				<h2>Make an Appointment</h2>
 					<ul  id="nav3">
                 <li ><a href="#"><img src="images/5a6eca187e729_39.jpg"> Name</a></li>
@@ -341,21 +353,20 @@ Cras pharetra dolor vitae malesuada facilisis. </p>
            </ul>
 			</div>
 		</div>
-		
-	<div class="row" id="footer">
-			<div class="col-md-2 col-md-offset-2"id="foot1"><p style="margin-top: 150px;">CLINICO</p>
+    <div class="row" id="footer">
+			<div class="col-md-2 col-md-offset-2 col-sm-12"id="foot1"><p>CLINICO</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin justo non odio molestie, sed venenatis elit laoreet. </p>
 	<div class="line"></div>
 
 <p>Donec quis condimentum leo, et congue dolor. Integer auctor facilisis odio. Duis vitae nibh tristique, consectetur lacus a, rutrum enim. </p>
 	<div class="line"></div>
 <p>Cras fermentum interdum dapibus. Maecenas imperdiet magna nec odio cursus, vitae consequat ante euismod. </p>	</div>
-			<div class="col-md-2" id="aaa">
+			<div class="col-md-2 col-sm-12" id="aaa">
 				<a href="#"id="a1"><img src="images/5a6eca1f250f0_32.jpg" /> </a>
 				<a href="#" id="b1"><img src="images/5a6eca1f250f0_352.jpg"/> </a>
 				<a href="#" id="c1"><img src="images/5a6eca1f250f0_382.jpg"/></a>
 			</div>
-			<div class="col-md-2" id="pht">
+			<div class="col-md-2 col-sm-12" id="pht">
 			<h4 id="Recent">Recent Posts</h4>
 			<ul id="phtul">
 				<li><img src="images/5a6eca187e729_01_26.jpg"/>
@@ -376,7 +387,7 @@ Cras pharetra dolor vitae malesuada facilisis. </p>
 </a></li>
 			</ul>
 			</div>
-			<div class="col-md-2" id="time">
+			<div class="col-md-2 col-sm-12" id="time">
 				<ul id="timeul1">
 <li>Mon<span>------</span>08:00 am - 12:00 pm</li>
 <li>Tue<span>------</span>01:00 am - 05:00 pm</li>
@@ -393,3 +404,4 @@ Cras pharetra dolor vitae malesuada facilisis. </p>
 	</div>
 	</body>
 </html>
+
