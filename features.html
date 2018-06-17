@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />  
+			<meta charset="utf-8" />  
     <meta http-equiv="X-UA-Compatible" content="IE=edge">  
     <meta name="viewport" content="width=device-width, initial-scale=1">  
 		<title>医学网站</title>
@@ -11,46 +11,10 @@
 		<link rel="stylesheet" type="text/css" href="css/new_file.css"/>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script type="text/javascript">
-$(function(){
-
-	$li1 = $(".apply_nav .apply_array");
-	$window1 = $(".apply .apply_w");
-	$left1 = $(".apply .img_l");
-	$right1 = $(".apply .img_r");
-	
-	$window1.css("width", $li1.length*272);
-
-	var lc1 = 0;
-	var rc1 = $li1.length-5;
-	
-	$left1.click(function(){
-		if (lc1 < 1) {
-			alert("已经是第一张图片");
-			return;
-		}
-		lc1--;
-		rc1++;
-		$window1.animate({left:'+=272px'}, 1000);
-	});
-
-	$right1.click(function(){
-		if (rc1 < 1){
-			alert("已经是最后一张图片");
-			return;
-		}
-		lc1++;
-		rc1--;
-		$window1.animate({left:'-=272px'}, 1000);
-	});
-
-})
-</script>
-	</head>
+			</head>
 	<body>
-	<div id="warp">
-	<nav class="navbar navbar-default" role="navigation" id="navbar">
+		<div id="warp">
+		<nav class="navbar navbar-default" role="navigation" id="navbar">
 	<div class="container-fluid"> 
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -125,157 +89,121 @@ $(function(){
 				<p>Aliquam ut lorem scelerisque, consequat mi quis, scelerisque massa. </p><a href="#" id="jia"><img src="images/6666.jpg"/></a></div>
 		</div>
 		</div>
-	<div class="row" id="tra">
-			<div class="col-md-4 col-md-offset-2">
-				<div class="row1">
-					<div class="col-xs-2 col-sm-2 ">
-						<img src="images/5a6eca187e729_14.jpg" id="img"/>
+		<div class="row">
+			<div class="col-md-2 col-md-offset-2 col-sm-6">
+				<div class="fea">
+					<h3>Donec id interdum nisi.</h3>
+					<div class="tu">
+						<p id="aug">20 AUG  2013 <span class="glyphicon glyphicon-comment"></span></p>
+						<img src="images/5a6eca1f250f0_08.jpg"/>
+						
+						<span>Mauris vitae quam quam. 
+							Class aptent taciti sociosqu ad litora torquent per conubia nostra,per inceptos himenaeos.
+							 Integer ullamcorper ultricies eros eu consequat.
+							 Nullam convallis volutpat nunc, gravida vestibulum mauris interdum et. 
+							 Nunc tristique eros nec dictum blandit. Cras eu turpis augue. 
+							 Ut non molestie nulla. Nulla nec rutrum tortor, in fermentum nisl</span>
+							 <a href="#" style="float: right;"><img src="images/5a6eca187e729_14 (2).jpg"/></a>
+							 <p>Posted in:<span id="den"> Dental Clinic, General, News</span></p>
 					</div>
-					<div class="col-xs-9 col-sm-9">
-						<p>Transplant Services</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin justo non odio molestie, sed venenatis elit laoreet. Cras pharetra dolor vitae malesuada </p>
-					</div>
-					<div class="col-xs-1 col-sm-1">
-						<a href="#"><img src="images/5a6eca187e729_14 (2).jpg"/></a>
+				</div>
+				<div class="fea">
+					<h3>Morbi justo dolor</h3>
+					<div class="tu">
+						<p id="aug">20 AUG  2013 <span class="glyphicon glyphicon-comment"></span></p>
+						<img src="images/5a6eca1f250f0_08.jpg"/>
+						
+						<span>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+							Aliquam venenatis consectetur sem, eget luctus eros. Sed massa arcu, tincidunt eget augue at,condimentum feugiat ante. 
+							 Nullam eleifend aliquam magna. Donec placerat, ipsum fringilla cursus vehicula, velit diam tristique magna. 
+							 Donec placerat, ipsum fringilla cursus vehicula, velit diam tristique magna, vitae sodales urna ante et lorem.
+							  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec lectus orci. </span>
+							 <a href="#" style="float: right;"><img src="images/5a6eca187e729_14 (2).jpg"/></a>
+							 <p>Posted in:<span id="den"> Dental Clinic, General, News</span></p>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4"><div class="row1">
-					<div class="col-xs-2 col-sm-2">
-						<img src="images/5a6eca187e729_16.jpg" id="img"/>
-					</div>
-					<div class="col-xs-9 col-sm-9">
-						<p>Qualified Doctors</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin justo non odio molestie, sed venenatis elit laoreet.
-Cras pharetra dolor vitae malesuada facilisis. </p>
-					</div>
-					<div class="col-xs-1 col-sm-1">
-						<a href="#">
-							<img src="images/5a6eca187e729_14 (2).jpg"/></a>
+			<div class="col-md-2  col-sm-6">
+						<div class="fea">
+					<h3>Curabitur iaculis varius</h3>
+					<div class="tu">
+						<p id="aug">18 AUG  2013 <span class="glyphicon glyphicon-comment"></span></p>
+						<img src="images/5a6eca1f250f0_08.jpg"/>
+						
+						<span>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+							 Aliquam venenatis consectetur sem, eget luctus eros.
+							  Sed massa arcu, tincidunt eget augue at, condimentum feugiat ante. 
+							  Nullam eleifend aliquam magna</span>
+							 <a href="#" style="float: right;"><img src="images/5a6eca187e729_14 (2).jpg"/></a>
+							 <p>Posted in:<span id="den"> Dental Clinic, General, News</span></p>
 					</div>
 				</div>
-</div>
-		</div>
-	<div class="row" id="tra">
-		<div class="col-md-4 col-md-offset-2"><div class="row1">
-					<div class="col-xs-2 col-sm-2">
-						<img src="images/5a6eca187e729_21.jpg" id="img"/>
-					</div>
-					<div class="col-xs-9 col-sm-9">
-						<p>24 Hours Service</p>
-			<p>Mauris consectetur, dui eget ullamcorper hendrerit, eros ligula consectetur dui, vitae adipiscing nunc enim eu justo. Donec quis mollis neque. Pellentesque facilisis  </p>
-					</div>
-					<div class="col-xs-1 col-sm-1">
-						<a href="#"><img src="images/5a6eca187e729_14 (2).jpg"/></a>
+				<div class="fea">
+					<h3>Quisque consequat nulla</h3>
+					<div class="tu">
+						<p id="aug">18 AUG  2013 <span class="glyphicon glyphicon-comment"></span></p>
+						<img src="images/5a6eca1f250.jpg"/>
+						
+						<span>Mauris vitae quam quam.
+							 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+							 Integer ullamcorper ultricies eros eu consequat. 
+							 Nullam convallis volutpat nunc, gravida vestibulum mauris interdum et. 
+							 Nunc tristique eros nec dictum blandit. </span>
+
+<span>Cras eu turpis augue. 
+	Ut non molestie nulla. 
+	Nulla nec rutrum tortor, in fermentum nisl Vivamus non metus eget nisl adipiscing congue. Donec placerat, 
+	ipsum fringilla cursus vehicula, velit diam tristique magna, vitae sodales urna ante et lorem. 
+	Lorem ipsum dolor sit amet</span>
+							 <a href="#" style="float: right;"><img src="images/5a6eca187e729_14 (2).jpg"/></a>
+							 <p>Posted in:<span id="den"> Dental Clinic, General, News</span></p>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4"><div class="row1">
-					<div class="col-xs-2 col-sm-2">
-						<img src="images/5a6eca187e729_22.jpg" id="img"/>
+			<div class="col-md-2  col-sm-6">
+					<div class="fea">
+					<h3>Mauris in fringilla</h3>
+					<div class="tu">
+						<p id="aug">18 AUG  2013 <span class="glyphicon glyphicon-comment"></span></p>
+						<img src="images/5a6eca1f250f0_12.jpg"/>
+						
+						<span>Aliquam venenatis consectetur sem, eget luctus eros sodales et.
+							Vivamus non metus eget nisl adipiscing congue. 
+							Donec placerat, ipsum fringilla cursus.
+							 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+							 Integer nec lectus orci. Nunc suscipit quis mauris non pellentesque.
+							  Cras at augue dui. Vestibulum mollis cursus orci</span>
+							 <a href="#" style="float: right;"><img src="images/5a6eca187e729_14 (2).jpg"/></a>
+							 <p>Posted in:<span id="den"> Dental Clinic, General, News</span></p>
 					</div>
-					<div class="col-xs-9 col-sm-9">
-						<p>Emergency Departments</p>
-			<p>Fusce pellentesque lectus quis placerat ultrices. Nunc malesuada est vitae urna laoreet porta. Donec cursus tellus libero, non porttitor felis luctus ut.  </p>
+				</div>
+				<div class="fea">
+					<h3>Pellentesque congue mi</h3>
+					<div class="tu">
+						<p id="aug">18 AUG  2013 <span class="glyphicon glyphicon-comment"></span></p>
+						<img src="images/5a6eca1f250f0_28.jpg"/>
+						
+						<span>Aliquam venenatis consectetur sem, eget luctus eros sodales et.
+							 Vivamus non metus eget nisl adipiscing congue. 
+							 Donec placerat, ipsum fringilla cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+							 Integer nec lectus orci. Nunc suscipit quis mauris non.</span>
+                        <span>Integer nec lectus orci.
+                        	Nunc suscipit quis mauris non pellentesque. 
+                        	Cras at augue dui. 
+                        	Vestibulum mollis cursus orci ut laoreet. Duis accumsan accumsan adipiscing. 
+                        	Mauris tincidunt a lacus nec pretium. </span>
+							 <a href="#" style="float: right;"><img src="images/5a6eca187e729_14 (2).jpg"/></a>
+							 <p>Posted in:<span id="den"> Dental Clinic, General, News</span></p>
 					</div>
-					<div class="col-xs-1 col-sm-1">
-						<a href="#"><img src="images/5a6eca187e729_14 (2).jpg"/></a>
-					</div>
-				</div></div>
-		</div>
-	<div class="row">
-			<div class="col-md-8 col-lg-offset-2">
-				<div class="apply">
-   <h1 style="float: left;">one doctors</h1>
-<div class="img_r"><img src=" images/5a6eca1f250f0_12 (2).jpg" /></div>
-	<div class="img_l"><img src="images/5a6eca1f250f0_10 (2).jpg" /></div>
+				</div>
+			</div>
 	
-	
-	<div class="apply_nav">
-		<div class="apply_w">
-		
-			<div class="apply_array">
-				<div class="apply_img"><img src="images/5a6eca187e729_26.jpg" /></div>
-				
-				<div class="apply_comment"><p>Dr. Sno White
-</p>
-<p>Neorologist</p></a>
-			</div>
-			</div>
-				<div class="apply_array">
-				<div class="apply_img"><img src="images/5a6eca187e729_28.jpg" /></div>
-				
-				<div class="apply_comment"><p>Dr. Sno White
-</p>
-<p>Neorologist</p></a>
-			</div>
-			</div>
-				<div class="apply_array">
-				<div class="apply_img"><img src="images/5a6eca187e729_30.jpg" /></div>
-				
-				<div class="apply_comment"><p>Dr. Sno White
-</p>
-<p>Neorologist</p></a>
-			</div>
-			</div>
-				<div class="apply_array">
-				<div class="apply_img"><img src="images/5a6eca187e729_33.jpg" /></div>
-				
-				<div class="apply_comment"><p>Dr. Sno White
-</p>
-<p>Neorologist</p></a>
-			</div>
-			</div>
-				<div class="apply_array">
-				<div class="apply_img"><img src="images/5a6eca187e729_26.jpg" /></div>
-				
-				<div class="apply_comment"><p>Dr. Sno White
-</p>
-<p>Neorologist</p></a>
-			</div>
-			</div>
-				<div class="apply_array">
-				<div class="apply_img"><img src="images/5a6eca187e729_28.jpg" /></div>
-				
-				<div class="apply_comment"><p>Dr. Sno White
-</p>
-<p>Neorologist</p></a>
-			</div>
-			</div>
-				<div class="apply_array">
-				<div class="apply_img"><img src="images/5a6eca187e729_30.jpg" /></div>
-				
-				<div class="apply_comment"><p>Dr. Sno White
-</p>
-<p>Neorologist</p></a>
-			</div>
-			</div>
-				<div class="apply_array">
-				<div class="apply_img"><img src="images/5a6eca187e729_33.jpg" /></div>
-				<div class="apply_comment"><p>Dr. Sno White
-</p>
-<p>Neorologist</p></a>
-			</div>
-		</div>
-		<div class="apply_array">
-				<div class="apply_img"><img src="images/5a6eca187e729_30.jpg" /></div>
-				
-				<div class="apply_comment"><p>Dr. Sno White
-</p>
-<p>Neorologist</p></a>
-			</div>
-		</div>
-</div>
-</div>
-</div>
-		</div>
-</div>
-    <div class="row" id="hhhh">
-			<div class="col-md-3 col-md-offset-2 col-sm-12">	
-				<h2>Departments</h2>
+			<div class="col-md-2  col-sm-6">
+				 <div class="right-top">
+				 	<h2>Departments</h2>
 				<div class="ny_zb">
-<div class="ny_zblb1">
-		<ul class="clearfix">
+<div class="ny_zblb1" id="ny_zb">
+		<ul class="clearfix1">
 			<li>
 				<a class="cur" href="javascript:void(0)"><img src="images/5a6eca1f250f0_05.jpg">Primary Health Care</a>
 				<ul style="display:block;">               
@@ -327,9 +255,9 @@ Cras pharetra dolor vitae malesuada facilisis. </p>
 	</div>
 	
 </div>
-</div>
-			<div class="col-md-3 col-sm-12">
-			<h2>Our Medical Services</h2>
+				 </div>
+			 <div class="right-bo">
+			 	<h2>Our Medical Services</h2>
 			<ul  class="nav nav-pills nav-stacked" id="nav">
 	<li class="active"><a href="#"><span class="glyphicon glyphicon-bookmark"></span>
 		<span>Cardiothoracic Surgery</span>
@@ -342,8 +270,8 @@ Cras pharetra dolor vitae malesuada facilisis. </p>
    <li><a href="#"><span class="glyphicon glyphicon-bookmark"></span><span> General Surgery</span><span class="glyphicon glyphicon-chevron-right"></span></a></li>
 <li><a href="#"><span class="glyphicon glyphicon-bookmark"></span><span>Consultative & Diagnostic Medicine</span><span class="glyphicon glyphicon-chevron-right"></span></a></li>
 </ul>
-			</div>
-			<div class="col-md-3 col-sm-12" id="uesd">
+			 </div>
+			<div class="right-foot">
 				<h2>Make an Appointment</h2>
 					<ul  id="nav3">
                 <li ><a href="#"><img src="images/5a6eca187e729_39.jpg"> Name</a></li>
@@ -353,8 +281,10 @@ Cras pharetra dolor vitae malesuada facilisis. </p>
                 <li><a href="#"><img src="images/5a6eca1f250f0_39.jpg">Message</a></li>
            </ul>
 			</div>
+			</div>
+			
 		</div>
-      <div class="row" id="footer" >
+		     <div class="row" id="footer" >
 			<div class="col-md-2 col-md-offset-2 col-sm-12" id="foot1">	
 				<div class="imgg">
 					<img src="images/5a6eca1f250f0_262.jpg" />
