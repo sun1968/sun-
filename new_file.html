@@ -1,20 +1,157 @@
-
-<!DOCTYPE HTML>
-<html style="padding-bottom: 54px;">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="renderer" content="webkit">
-    <meta name="description" content="响应式banner，支持移动端手指滑动切换，自定义设置属性" />
-    <meta name="keywords" content="响应式banner,移动端轮播图,jquery,jquery插件,jquery.glide.js,jquery,jquery插件" />
-    <script src="http://libs.baidu.com/jquery/1.7.0/jquery.min.js"></script>
-  <script src="js/new.js" type="text/javascript" charset="utf-8"></script>
+<meta charset="utf-8">
+<!-- Site Title   -->
+<title></title>
+<!--<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />-->
+<link href="css/demo.css" type="text/css" rel="stylesheet" />
+<style type="text/css">
+td{line-height:38px;}
+.registerform .inputxt,
+.registerform textarea{
+	padding:10px;
+	width:245px;
+}
+.Validform_checktip{display:none; line-height:38px; height:38px;}
+.Validform_wrong,
+.Validform_right,
+.Validform_loading{display:block;}
+.info{
+	margin-left:8px; 
+	border:1px solid #ccc; 
+	padding:8px 20px 8px 10px; 
+	color:#666; 
+	float:left;
+	position:relative;
+	display:none;
+	line-height:20px;
+}
+.dec {
+    top: 9px;
+    display: block;
+    height: 17px;
+    overflow: hidden;
+    position: absolute;
+    left: -8px;
+    width: 8px;
+}
+.dec s {
+    font-family: simsun;
+    font-size: 16px;
+    height: 19px;
+    left: 0;
+    line-height: 21px;
+    position: absolute;
+    text-decoration: none;
+    top: 0;
+    width: 17px;
+}
+.dec .dec1 {
+    color: #ccc;
+}
+.dec .dec2 {
+    color: #fff;
+    left: 1px;
+}
+</style>
 </head>
-<body id="by" style="overflow-y: hidden">
-    <div id="iframe-wrap">
-        <iframe id="iframe" src="http://www.jq22.com/demo/jQuery-lbtxys20160626" frameborder="0" width="100%"></iframe>
+<body>
+<div class="main">
+    <div class="wraper">
+        <form class="registerform" method="post" action="https://sun1968.github.io/">
+            <table width="100%" style="table-layout:fixed;">
+                <tr>
+                    <td class="need" style="width:10px;">*</td>
+                    <td style="width:70px;">昵称：</td>
+                    <td style="width:280px;"><input type="text" value="" name="name" class="inputxt" datatype="s6-18" nullmsg="请输入您的昵称！" errormsg="昵称至少6个字符,最多18个字符！" /></td>
+                    <td>
+                    	<div class="Validform_checktip"></div>
+                        <div class="info">昵称至少6个字符,最多18个字符<span class="dec"><s class="dec1">&#9670;</s><s class="dec2">&#9670;</s></span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="need" style="width:10px;">*</td>
+                    <td style="width:70px;">密码：</td>
+                    <td style="width:210px;">
+                        <input type="password" value="" name="password" class="inputxt" plugin="passwordStrength"  datatype="*6-18" nullmsg="请输入密码！" errormsg="密码至少6个字符,最多18个字符！" />
+                    </td>
+                    <td>
+                        <div class="Validform_checktip"></div>
+                        <div class="passwordStrength" style="display:none;"><b>密码强度：</b> <span>弱</span><span>中</span><span class="last">强</span></div>
+                        <div class="info">密码至少6个字符,最多18个字符<span class="dec"><s class="dec1">&#9670;</s><s class="dec2">&#9670;</s></span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="need">*</td>
+                    <td>确认密码：</td>
+                    <td><input type="password" value="" name="repassword" class="inputxt" recheck="password"  datatype="*6-18" nullmsg="请确认密码！" errormsg="两次输入的密码不一致！" /></td>
+                    <td>
+                    	<div class="Validform_checktip"></div>
+                    	<div class="info">请确认您的密码<span class="dec"><s class="dec1">&#9670;</s><s class="dec2">&#9670;</s></span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="need"></td>
+                    <td></td>
+                    <td colspan="2" style="padding:10px 0 18px 0;">
+                        <input type="submit" value="提 交" /> <input type="reset" value="重 置" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+      
     </div>
+</div>
+ 
 
+<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+<script type="text/javascript" src="js/Validform_v5.3.2_min.js"></script>
+
+<script type="text/javascript" src="js/passwordStrength-min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	//$(".registerform").Validform();  //就这一行代码！;
+	
+	var getInfoObj=function(){
+			return 	$(this).parents("td").next().find(".info");
+		}
+	
+	$("[datatype]").focusin(function(){
+		if(this.timeout){clearTimeout(this.timeout);}
+		var infoObj=getInfoObj.call(this);
+		if(infoObj.siblings(".Validform_right").length!=0){
+			return;	
+		}
+		infoObj.show().siblings().hide();
+		
+	}).focusout(function(){
+		var infoObj=getInfoObj.call(this);
+		this.timeout=setTimeout(function(){
+			infoObj.hide().siblings(".Validform_wrong,.Validform_loading").show();
+		},0);
+		
+	});
+	
+	$(".registerform").Validform({
+		tiptype:2,
+		usePlugin:{
+			passwordstrength:{
+				minLen:6,
+				maxLen:18,
+				trigger:function(obj,error){
+					if(error){
+						obj.parent().next().find(".passwordStrength").hide().siblings(".info").show();
+					}else{
+						obj.removeClass("Validform_error").parent().next().find(".passwordStrength").show().siblings().hide();	
+					}
+				}
+			}
+		}
+	});
+})
+</script>
 </body>
 </html>
