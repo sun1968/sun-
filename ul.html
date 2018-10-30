@@ -5,10 +5,24 @@
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="css/new_file.css"/>
+<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+<script type="text/javascript">
+$(function(){
+    function tabs(tabTit,on,tabCon){
+        $(tabTit).children().hover(function(){
+            $(this).addClass(on).siblings().removeClass(on);
+            var index = $(tabTit).children().index(this);
+           	$(tabCon).children().eq(index).show().siblings().hide();
+    	});
+	};
+    tabs(".tab-hd","active",".tab-bd");
+});
+</script>
 	</head>
 	<body>
 		<div id="warp">
-						<nav class="navbar navbar-default" role="navigation" id="navbar">
+			<!--导航-->
+	<nav class="navbar navbar-default" role="navigation" id="navbar">
 	<div class="container-fluid"> 
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -22,10 +36,10 @@
 	</div>
 	<div class="collapse navbar-collapse" id="example-navbar-collapse">
 		<ul class="nav navbar-nav" id="nnnn">
-			<li id="act"><a href="#">Home</a></li>
+			<li id="act"><a href="index.html">Home</a></li>
 			<li><a href="#">Services</a></li>
 			<li><a href="#">Timetable </a></li>
-			<li><a href="#">News </a></li>
+			<li><a href="ul.html">News </a></li>
 			<li><a href="aboutme.html">Services</a></li>
 			<li><a href="reint.html">Features</a></li>
 		    <li><a href="photo.html">Photo Tour</a></li>	
@@ -34,7 +48,8 @@
 	</div>
 	</div>
 </nav>
-			<div class="row" id="nav-nav">
+		<!--二级导航	-->
+<div class="row" id="nav-nav">
 				<div class="col-md-8 col-md-offset-2">
 					<p > Retina Ready & Responsive</p>
 					<span>></span>	<a>Retina Ready & Responsive</a> 
@@ -42,60 +57,37 @@
 					<span>></span>	<a>Home</a>  
 				</div>
 			</div>
+			<!--主页面-->
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2" id="sun">
 					<div class="col-md-8">
 						<div class="row">
 						<div class="col-md-6">
 							<h3>Tab style 1</h3>
-											<ul id="list-title">
-    <li class="list-item list-item-checked">1</li>
-    <li class="list-item">2</li>
-    <li class="list-item">3</li>
-</ul>
-<div id="content-box">
-    <div class="contents contents-checked" style="background-color: #c8ff40;">content_1</div>
-     <div class="contents" style="background-color: #41ff6f;">content_2</div>
-     <div class="contents" style="background-color: #ff82a0;">content_3</div>
- </div>
+
+ <div class="tab">
+		<ul class="tab-hd"><li class="active">选项1</li><li>选项2</li><li>选项3</li></ul>
+		<ul class="tab-bd"><li class="thisclass">内容1</li><li>内容2</li><li>内容3</li></ul>
+	</div>
 </div>
 		<div class="col-md-6">	
 			<h3>Tab style 2</h3>
- <ul id="list-title1">
-    <li class="list-item1 list-item-checked1">1</li>
-    <li class="list-item1">2</li>
-    <li class="list-item1">3</li>
-</ul>
-<div id="content-box1">
-    <div class="contents1 contents-checked1" style="background-color: #c8ff40;">content_1</div>
-     <div class="contents1" style="background-color: #41ff6f;">content_2</div>
-     <div class="contents1" style="background-color: #ff82a0;">content_3</div>
- </div>
-		</div>
-		</div>
-		    <div class="row">
-			<div class="col-md-12" >
 
-    <div id="box">
-      <ul id="ul1">
-        <li >国际名品</li>
-        <li>户外秒杀</li>
-        <li>运动潮流</li>
-      </ul>
-    </div>
-
-
-    <div id="content">
-      <div class="tab" style="display:block;">国际大牌国际大牌国际大牌国际大牌国际大牌国际大牌国际大牌国际大牌</div>
-      <div class="tab"> shedffffffffffffffffffffffffffffff</div>
-      <div class="tab"> vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv</div>
-    </div>
+  <div class="tab">
+		<ul class="tab-hd"><li class="active">选项1</li><li>选项2</li><li>选项3</li></ul>
+		<ul class="tab-bd"><li class="thisclass">内容1</li><li>内容2</li><li>内容3</li></ul>
+	</div>
 		</div>
 		
-		
-		
-					</div>
-				
+		</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="tab">
+		<ul class="tab-hd"><li class="active">选项7</li><li>选项8</li><li>选项9</li></ul>
+		<ul class="tab-bd"><li class="thisclass">内容7</li><li>内容8</li><li>内容9</li></ul>
+	</div>
+		</div>
+	</div>
 			</div>		
  <div class="col-md-4">
 							<div class="search2">
@@ -193,7 +185,5 @@
 			</div>
 		</div>
 			</div>
-				
-				<script src="js/ul.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
