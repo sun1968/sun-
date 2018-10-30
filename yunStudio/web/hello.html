@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="showList" align="center"><!--显示试题-->
+    <table border="0" cellspacing="10" cellpadding="0">
+        <c:forEach var="u" items="${list }">
+            <tr>
+                <td>试题编号:</td>
+                <td>${u.studentId}</td>
+            </tr>
+            <tr>
+                <td>试题题目:</td>
+                <td>${u.username }</td>
+            </tr>
+            <tr>
+                <td>选项A:</td>
+                <td>${u.password }</td>
+            </tr>
+            <tr>
+                <td>选项B:</td>
+                <td>${u.subjectOptionB }</td>
+            </tr>
+            <tr>
+                <td>选项C:</td>
+                <td>${u.qq }</td>
+            </tr>
+            <tr>
+                <td>选项D:</td>
+                <td>${u.email }</td>
+            </tr>
+            <tr>
+                <td>答案:</td>
+                <td>${u.borthday }</td>
+            </tr>
+            <tr>
+                <td valign="top">答案解析:</td>
+                <td valign="top">${u.borthday }</td>
+            </tr>
+        </c:forEach>
+    </table>
+</div>
+</body>
+</html>
