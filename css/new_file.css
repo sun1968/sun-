@@ -150,8 +150,15 @@ border-bottom:1px solid #dddddd;font-family:"微软雅黑";}
 #a11 img{width: 11%; margin-left: 0.5%;}
 #p1{color: black;font-size: 28px;}
 #p2{color: blue;font-size: 23px;}
-#nav3 li{width: 100%;}
-
+#nav3{
+	height: 300px;
+}
+#nav3 span{
+	padding: 20px;
+	font-size: 30px;
+}
+#nav3 li{width: 100%;height: 50px;}
+#nav3 a:hover{background: red;}
 .Validform_checktip{margin-left:8px;line-height:20px;height:20px;overflow:hidden;color:#999;font-size:12px;}
 td{line-height:38px;}
 .registerform .inputxt,
@@ -258,13 +265,26 @@ td{line-height:38px;}
   #content{
     width: 410px;
   }
-  .tab{
+/*  .tab{
     width: 410px;
     height: 204px;
     border: 2px solid #ececec;
     display: none;
     margin-left: 102px;
-  }
+  }*/
   #ul1 li:hover{
     border: 2px solid red;
   }
+
+
+
+
+/*ul*/
+.tab{ width:100%; margin:0 auto 50px; height: auto;}
+.tab-hd { background:#F93; overflow:hidden; zoom:1;}
+.tab-hd li{ float:left; width: 30%; color:#fff; text-align:center; cursor:pointer;}
+.tab-hd li.active{ background:#F60;}
+.tab-bd{widows: 100%;height: 100px;}
+.tab-bd li{width:100%;display:none; padding:20px; border:1px solid #ddd;  font-size:24px;
+height: 95%;}
+.tab-bd li.thisclass{ display:list-item;}
